@@ -8,12 +8,7 @@ import { Button, Card, CardGroup, ListGroup, ListGroupItem } from "react-bootstr
 const CatalogComponent = (props: ProductProps) => 
 
 {   
-  const handlerAdd = () => {
-    timer.increase();
-  }
-  const handlerRemove = () => {
-    timer.decrease();
-  }
+
   return (
         <div>
           <CardGroup className="Product">
@@ -37,8 +32,7 @@ const CatalogComponent = (props: ProductProps) =>
           <Card.Text>
             Content
           </Card.Text>
-          <Button variant="outline-primary" onClick={() => handlerAdd()}> Add </Button>
-          <Button variant="outline-primary" onClick={() => handlerRemove()}> Remove </Button>
+         
         </Card.Body>
         <Card.Body>
           <Card.Link href="#">Another Link</Card.Link>

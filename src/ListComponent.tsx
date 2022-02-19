@@ -1,13 +1,20 @@
 import { Card, ListGroup } from 'react-bootstrap';
-import ProductComponent from './ProductComponent';
+import {Product} from './Product';
 
 
 type IListProps = {
-    children: ProductComponent | null;
+    children: Product [] | null;
 }
 
 const ListComponent = (props: IListProps) => {
+    
+    const handlerAdd = (product: Product) => {
+       timer.Add();
 
+      }
+      const handlerRemove = (product: Product) => {
+        timer.Remove();
+      }
     return (
         <ListGroup as="ol" numbered>
             <h4>List</h4>
@@ -17,10 +24,8 @@ const ListComponent = (props: IListProps) => {
                         <Card.Img variant="top" src={item.avatar} />
                         <Card.Body>
                             <Card.Title>
-                                Avatar
-                                <p>Id: {item.id}</p>
-                                <p>Name: {item.first_name} {item.last_name}</p>
-                                <p>Email: {item.email}</p>                                                             
+                            <Button variant="outline-primary" onClick={()) => handlerAdd(product)}> Add </Button>
+                            <Button variant="outline-primary" onClick={() => handlerRemove(product)}> Remove </Button>                                                             
                             </Card.Title>
                         </Card.Body>
                     </Card>

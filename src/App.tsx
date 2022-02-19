@@ -68,8 +68,7 @@ const App = observer(() => {
           <Route path="/" element={<HomeComponent />} />
           <Route path="busket" element={<BasketComponent />} />
           <Route path="*" element={<Navigate replace to={'/'} />} />
-          <Route path="catalog" element={<CatalogComponent />}/>
-          <Route path="me" element={<MeComponent />} />          
+          <Route path="catalog" element={<CatalogComponent />}/>        
         </Routes>
 
 

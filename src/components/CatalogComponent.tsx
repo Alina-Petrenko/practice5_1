@@ -1,4 +1,3 @@
-
 import { Button, Card, ListGroup } from "react-bootstrap"
 import { observer } from 'mobx-react';
 import { Product } from "../models/Product";
@@ -15,12 +14,10 @@ const CatalogComponent = observer((props: IListProps) =>
     moving.AddProduct(product);
 
    }
-   const handlerRemove = (id: number) => {
-    moving.RemoveProduct(id);
-   }
 
-  return (
-    <div className="card">
+ 
+
+  return (<>
     <ListGroup as="ol" numbered>
       Предметов в корзине: {moving.basket.length}
       {
@@ -35,14 +32,14 @@ const CatalogComponent = observer((props: IListProps) =>
                         {product.price} грн                                       
                       </Card.Title>
                         <Button variant="outline-primary" onClick={() => handlerAdd(product)}> Add </Button>
-                        <Button variant="outline-primary" onClick={() => handlerRemove(product.id)}> Remove </Button>                                                                                                
+                              
                   </Card.Body>
               </Card>
           </ListGroup.Item>
     ) }
     </ListGroup>
-    </div>
-    )
+        <br></br>
+  </>)
   ;
 });
 

@@ -39,6 +39,8 @@
 .card {
     text-align: center !important;
     display: flex !important;
-    justify-content: space-around !important;
-
+    justify-content: center !important;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }

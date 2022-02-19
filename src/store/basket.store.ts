@@ -21,7 +21,7 @@ export class Basket {
         this.price += product.price;
     }
     RemoveProduct(id: number) {
-        let index = this.basket.findIndex(x => x.id === id);
+        let index = this.basket.findIndex(x => x.id == id);
         if (index == -1) {
              return;
         }

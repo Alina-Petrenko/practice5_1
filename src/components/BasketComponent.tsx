@@ -22,7 +22,7 @@ const BasketComponent = observer((props: IListProps) => {
       }
     
     return (
-        <>
+        <div className="card">
         <ListGroup as="ol" numbered>
             {props.children?.map((product) =>
                 <ListGroup.Item>
@@ -39,9 +39,11 @@ const BasketComponent = observer((props: IListProps) => {
                 </ListGroup.Item>
             )}
         </ListGroup>
-        {moving.price}
+
+        
+        <br>{moving.price}</br>
         <Button variant="outline-primary" onClick={() => handlerReset()}> Reset </Button>
-        </>
+        </div>
     )
 });
 

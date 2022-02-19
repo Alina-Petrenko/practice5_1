@@ -10,13 +10,61 @@ import BasketComponent from './components/BasketComponent';
 
 const prod: Product [] =[{
   
-  id:1,
+  id:0,
   name:"Cola",
   price: 120,
   img: ""
 },
 {
+  id:1,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
   id:2,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:3,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:4,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:5,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:6,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:7,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:8,
+  name:"Moloko",
+  price: 120,
+  img: ""
+},
+{
+  id:9,
   name:"Moloko",
   price: 120,
   img: ""
@@ -37,7 +85,7 @@ const App = observer(() => {
   }
 
   return (
-        <div className="App">
+        <div className="App">        
           <Button variant="outline-primary" onClick={() => handlerBusket()}> Busket </Button>
           <Button variant="outline-primary" onClick={() => handlerCatalog()}> Catalog </Button>
 

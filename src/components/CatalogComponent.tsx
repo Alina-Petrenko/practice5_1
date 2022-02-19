@@ -20,7 +20,7 @@ const CatalogComponent = observer((props: IListProps) =>
    }
 
   return (
-    
+    <div className="card">
     <ListGroup as="ol" numbered>
       {moving.basket.length}
       {
@@ -39,7 +39,7 @@ const CatalogComponent = observer((props: IListProps) =>
           </ListGroup.Item>
     ) }
     </ListGroup>
-    
+    </div>
     )
   ;
 });

@@ -2,22 +2,14 @@ import { makeAutoObservable } from "mobx"
 import { Product } from "../Product";
 
 export class Timer {
-    secondsPassed = 0
     public basket: Product[]=[];
   
     constructor() {
         makeAutoObservable(this)
     }
-  
-    increase() {
-        this.secondsPassed += 1
-    }
-  
+    
     reset() {
-        this.secondsPassed = 0
-    }
-    decrease() {
-        this.secondsPassed -= 1
+        this.basket = []
     }
 
     AddProduct(product: Product) {

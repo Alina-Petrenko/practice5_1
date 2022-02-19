@@ -1,91 +1,37 @@
 import { timer } from './index';
 import { Button, Card, CardGroup, ListGroup, ListGroupItem } from "react-bootstrap"
+import { Product } from './Product';
 
-  type ProductProps = {
-    product: ProductProps | null
-};
+type IListProps = {
+  children: Product [] | null;
+}
 
-const CatalogComponent = (props: ProductProps) => 
+const CatalogComponent = (props: IListProps) => 
 
 {   
+  const handlerAdd = (product: Product) => {
+    timer.AddProduct(product);
 
+   }
+   const handlerRemove = (i: number) => {
+     timer.RemoveProduct(i);
+   }
   return (
-        <div>
-          <CardGroup className="Product">
-            <Card>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-          </Card.Text>
-          <Button variant="outline-primary" onClick={() => handlerAdd()}> Add </Button>
-          <Button variant="outline-primary" onClick={() => handlerRemove()}> Remove </Button>
-        </Card.Body>
-        <Card.Body>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body></Card>
-        
-        <Card>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Content
-          </Card.Text>
-         
-        </Card.Body>
-        <Card.Body>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-        </Card>
-
-        <Card>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Content
-          </Card.Text>
-          <Button variant="outline-primary" onClick={() => handlerAdd()}> Add </Button>
-          <Button variant="outline-primary" onClick={() => handlerRemove()}> Remove </Button>
-        </Card.Body>
-        <Card.Body>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-        </Card>
-
-        <Card>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Content
-          </Card.Text>
-          <Button variant="outline-primary" onClick={() => handlerAdd()}> Add </Button>
-          <Button variant="outline-primary" onClick={() => handlerRemove()}> Remove </Button>
-        </Card.Body>
-        <Card.Body>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-        </Card>
-
-        <Card>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Content
-          </Card.Text>
-          <Button variant="outline-primary" onClick={() => handlerAdd()}> Add </Button>
-          <Button variant="outline-primary" onClick={() => handlerRemove()}> Remove </Button>
-        </Card.Body>
-        <Card.Body>
-          <Card.Link href="#">Another Link</Card.Link>
-        </Card.Body>
-        </Card>
-      </CardGroup>
-      
-      </div>
+    <ListGroup as="ol" numbered>
+    {props.children?.map((product) =>
+        <ListGroup.Item>
+            <Card style={{ width: '350px' }}>
+                <Card.Img variant="top" src={product.img} />
+                <Card.Body>
+                    <Card.Title>
+                    <Button variant="outline-primary" onClick={() => handlerAdd(product)}> Add </Button>
+                    <Button variant="outline-primary" onClick={() => handlerRemove(product.id)}> Remove </Button>                                                             
+                    </Card.Title>
+                </Card.Body>
+            </Card>
+        </ListGroup.Item>
+    )}
+</ListGroup>
     )
   ;
 }

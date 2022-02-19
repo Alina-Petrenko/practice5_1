@@ -9,8 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Provider } from 'react-redux';
 import store from './store';
-import { BrowserRouter } from 'react-router-dom';
 import { Timer } from './store/timer.store';
+import { BrowserRouter } from 'react-router-dom';
 
 
 export const timer = new Timer();

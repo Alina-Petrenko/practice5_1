@@ -4,13 +4,10 @@ import React from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import HomeComponent from './HomeComponent';
 import CatalogComponent from './CatalogComponent';
-import MeComponent from './MeComponent';
-import { debug } from 'console';
 import { makeAutoObservable } from 'mobx';
 import { observer } from "mobx-react"
 import { timer } from './index';
-import { BasketComponent } from './BasketComponent';
-import  ProductComponent from './ProductComponent';
+import ListComponent from './ListComponent';
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap"
 
 
@@ -56,23 +53,19 @@ const App = observer(() => {
   }*/
 
   return (
-      <>
         <div className="App">
           <Button variant="outline-primary" onClick={() => handlerBusket()}> Busket </Button>
           <Button variant="outline-primary" onClick={() => handlerCatalog()}> Catalog </Button>
           <Button variant="outline-primary" onClick={() => handlerUser()}> User </Button>
-        </div>
 
-        {timer.secondsPassed}
+
         <Routes>
           <Route path="/" element={<HomeComponent />} />
-          <Route path="busket" element={<BasketComponent />} />
+          <Route path="busket" element={<ListComponent />} />
           <Route path="*" element={<Navigate replace to={'/'} />} />
-          <Route path="catalog" element={<CatalogComponent />}/>        
+          <Route path="catalog" element={<CatalogComponent children ={list}/>}/>        
         </Routes>
-
-
-      </>
+        </div>
   );
 });
 

@@ -18,10 +18,10 @@ const ListComponent = (props: IListProps) => {
     return (
         <ListGroup as="ol" numbered>
             <h4>List</h4>
-            {props.children?.list.map((item) =>
+            {props.children?.list.map((product) =>
                 <ListGroup.Item>
                     <Card style={{ width: '350px' }}>
-                        <Card.Img variant="top" src={item.avatar} />
+                        <Card.Img variant="top" src={product.avatar} />
                         <Card.Body>
                             <Card.Title>
                             <Button variant="outline-primary" onClick={()) => handlerAdd(product)}> Add </Button>

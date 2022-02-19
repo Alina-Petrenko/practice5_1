@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { Button } from 'react-bootstrap';
 import React from 'react';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import HomeComponent from './HomeComponent';
@@ -11,6 +10,8 @@ import { makeAutoObservable } from 'mobx';
 import { observer } from "mobx-react"
 import { timer } from './index';
 import { BasketComponent } from './BasketComponent';
+import  ProductComponent from './ProductComponent';
+import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap"
 
 
 
@@ -35,6 +36,8 @@ const App = observer(() => {
     navigate('me');
   }
 
+
+
   /*const handlerNavigate = () => {
     localStorage.setItem("key_basket", JSON.stringify([1, 2, 3]));
     const str_basket = localStorage.getItem("key_basket");
@@ -51,13 +54,13 @@ const App = observer(() => {
     navigate('about');
     setIsAbout(true);
   }*/
- 
+
   return (
       <>
         <div className="App">
-          <Button className='my-btn' onClick={() => handlerBusket()}> Busket </Button>
-          <Button className='my-btn' onClick={() => handlerCatalog()}> Catalog </Button>
-          <Button className='my-btn' onClick={() => handlerUser()}> User </Button>
+          <Button variant="outline-primary" onClick={() => handlerBusket()}> Busket </Button>
+          <Button variant="outline-primary" onClick={() => handlerCatalog()}> Catalog </Button>
+          <Button variant="outline-primary" onClick={() => handlerUser()}> User </Button>
         </div>
 
         {timer.secondsPassed}
@@ -68,6 +71,8 @@ const App = observer(() => {
           <Route path="catalog" element={<CatalogComponent />}/>
           <Route path="me" element={<MeComponent />} />          
         </Routes>
+
+
       </>
   );
 });

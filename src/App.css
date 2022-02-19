@@ -36,6 +36,9 @@
     transform: rotate(360deg);
   }
 }
-.my-btn {
-  background-color: #61dafb !important;
+.Product {
+  text-align: center;
+    display: flex;
+    justify-content: space-around;
+
 }

@@ -14,4 +14,7 @@ export class Timer {
     reset() {
         this.secondsPassed = 0
     }
+    decrease() {
+        this.secondsPassed -= 1
+    }
   }

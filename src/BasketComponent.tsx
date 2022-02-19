@@ -9,6 +9,5 @@ const handleHomeMobx = () => {
     timer.reset();
 }
 return (<>
-    <Button className='my-btn' onClick={() => handleHomeMobx()}> Clean Basket </Button>
-    <div>Home</div>
+    <Button variant="outline-primary" onClick={() => handleHomeMobx()}> Clean Basket </Button>
 </>)}

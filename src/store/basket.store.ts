@@ -1,27 +1,31 @@
 import { makeAutoObservable } from "mobx"
-import { Product } from "../Product";
+import { Product } from "../models/Product";
 
-export class Timer {
+export class Basket {
 
+    
     public basket: Product[]=[];
- 
+    price: number = 0;
+
     constructor() {
         makeAutoObservable(this)
     }
     
     reset() {
         this.basket = []
+        this.price = 0;
     }
 
     AddProduct(product: Product) {
         this.basket.push(product);
+        this.price += product.price;
     }
-    RemoveProduct(i: number) {
-        let index = this.basket.findIndex(x => x.id = i);
+    RemoveProduct(id: number) {
+        let index = this.basket.findIndex(x => x.id === id);
         if (index == -1) {
              return;
         }
+        this.price -= this.basket[index].price;
         this.basket.splice(index,1);
-
     }
   }

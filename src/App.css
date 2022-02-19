@@ -36,9 +36,9 @@
     transform: rotate(360deg);
   }
 }
-.Product {
-  text-align: center;
-    display: flex;
-    justify-content: space-around;
+.card {
+    text-align: center !important;
+    display: flex !important;
+    justify-content: space-around !important;
 
 }

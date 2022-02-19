@@ -1,13 +1,14 @@
+import { observer } from 'mobx-react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
 import { timer } from '.';
-import {Product} from './Product';
+import { Product } from './Product';
 
 
 type IListProps = {
     children: Product [] | null;
 }
 
-const ListComponent = (props: IListProps) => {
+const ListComponent = observer((props: IListProps) => {
     
     const handlerAdd = (product: Product) => {
        timer.AddProduct(product);
@@ -24,6 +25,7 @@ const ListComponent = (props: IListProps) => {
                         <Card.Img variant="top" src={product.img} />
                         <Card.Body>
                             <Card.Title>
+                            {product.name}
                             <Button variant="outline-primary" onClick={() => handlerAdd(product)}> Add </Button>
                             <Button variant="outline-primary" onClick={() => handlerRemove(product.id)}> Remove </Button>                                                             
                             </Card.Title>
@@ -33,6 +35,6 @@ const ListComponent = (props: IListProps) => {
             )}
         </ListGroup>
     )
-};
+});
 
 export default ListComponent;

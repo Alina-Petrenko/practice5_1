@@ -2,8 +2,9 @@ import { makeAutoObservable } from "mobx"
 import { Product } from "../Product";
 
 export class Timer {
+
     public basket: Product[]=[];
-  
+ 
     constructor() {
         makeAutoObservable(this)
     }
@@ -20,7 +21,7 @@ export class Timer {
         if (index == -1) {
              return;
         }
-        this.basket.splice(index);
+        this.basket.splice(index,1);
 
     }
   }

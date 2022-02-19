@@ -9,7 +9,21 @@ import { observer } from "mobx-react"
 import { timer } from './index';
 import ListComponent from './ListComponent';
 import { Button, Card, ListGroup, ListGroupItem } from "react-bootstrap"
+import { Product } from './Product';
 
+const prod: Product [] =[{
+  
+  id:1,
+  name:"Cola",
+  price: 120,
+  img: ""
+},
+{
+  id:2,
+  name:"Moloko",
+  price: 120,
+  img: ""
+}];
 
 
 const App = observer(() => {
@@ -22,7 +36,7 @@ const App = observer(() => {
 
   const handlerBusket =() => 
   {
-    navigate('busket');
+    navigate('basket');
   }
   const handlerCatalog =() => 
   {
@@ -33,7 +47,7 @@ const App = observer(() => {
     navigate('me');
   }
 
-
+ 
 
   /*const handlerNavigate = () => {
     localStorage.setItem("key_basket", JSON.stringify([1, 2, 3]));
@@ -61,9 +75,9 @@ const App = observer(() => {
 
         <Routes>
           <Route path="/" element={<HomeComponent />} />
-          <Route path="busket" element={<ListComponent />} />
+          <Route path="basket" element={<ListComponent children ={prod}/>} />
           <Route path="*" element={<Navigate replace to={'/'} />} />
-          <Route path="catalog" element={<CatalogComponent children ={list}/>}/>        
+          <Route path="catalog" element={<CatalogComponent children ={prod}/>}/>        
         </Routes>
         </div>
   );

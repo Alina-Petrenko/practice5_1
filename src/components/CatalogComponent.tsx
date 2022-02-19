@@ -22,7 +22,7 @@ const CatalogComponent = observer((props: IListProps) =>
   return (
     <div className="card">
     <ListGroup as="ol" numbered>
-      {moving.basket.length}
+      Предметов в корзине: {moving.basket.length}
       {
         props.children?.map((product) =>
           <ListGroup.Item>
@@ -30,7 +30,9 @@ const CatalogComponent = observer((props: IListProps) =>
                   <Card.Img variant="top" src={product.img} />
                   <Card.Body>
                       <Card.Title>  
-                        {product.name}                                       
+                        {product.name}
+                        <br></br>
+                        {product.price} грн                                       
                       </Card.Title>
                         <Button variant="outline-primary" onClick={() => handlerAdd(product)}> Add </Button>
                         <Button variant="outline-primary" onClick={() => handlerRemove(product.id)}> Remove </Button>                                                                                                
